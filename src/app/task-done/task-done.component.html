@@ -1,6 +1,6 @@
 <ul>
-    <li>Wykonanych {{taskDone.length}}</li>
-    <li *ngFor="let item of taskDone">
+    <li >Wykonanych {{taskDone.length}}</li>
+    <li *ngFor="let item of taskDone; let odd = odd;" [ngClass]="{'odd-list': odd === true}">
       {{item}}
     </li>
   </ul>

@@ -3,10 +3,10 @@
     <app-add-taks (eventTask)="addTask($event)"></app-add-taks>
   </tr>
   <tr>
-    <td>Lista zadań
+    <td [ngStyle]="{color: getColor()}">Lista zadań
       <app-task-list [taskList]="taskList" (eventDone)="doneTask($event)" (eventDelete)="deleteTask($event)"></app-task-list>
     </td>
-    <td>Zadania zrobione
+    <td >Zadania zrobione
         <app-task-done [taskDone]="taskDone"></app-task-done>
     </td>
   </tr>

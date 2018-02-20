@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   title = 'app';
@@ -17,16 +18,20 @@ export class AppComponent {
   }
 
   deleteTask(task) {
-    console.log(task);
-    this.taskList = this.taskList.filter( t => {
-        return t !== task;
-      }
+    this.taskList = this.taskList.filter(t => {
+      return t !== task;
+    }
     );
   }
 
   doneTask(task) {
     this.taskDone.push(task);
     this.deleteTask(task);
+  }
+
+
+  getColor() {
+    return this.taskList.length > 5 ? 'red' : 'purple';
   }
 
 
