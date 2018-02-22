@@ -8,6 +8,7 @@ import { AddTaksComponent } from './add-taks/add-taks.component';
 
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskDoneComponent } from './task-done/task-done.component';
+import { TaksService } from './services/taks.sevice';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { TaskDoneComponent } from './task-done/task-done.component';
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [TaksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,12 @@
-<ul>
-  <li *ngFor="let task of taskList">
-    {{task}}
-    <button (click)="deleteTask(task)">Usuń</button>
-    <button (click)="doneTask(task)">Zrobione</button>
-  </li>
-</ul>
+<ng-container *ngIf="taskList.length > 0; else notask;">
+  <ul>
+    <li *ngFor="let task of taskList">
+      {{task.name}}
+      <button class="btn btn-danger" (click)="deleteTask(task)">Usuń</button>
+      <button class="btn btn-success" (click)="doneTask(task)">Zrobione</button>
+    </li>
+  </ul>
+</ng-container>
+<ng-template #notask>
+  <p [ngStyle]="{'background':'red'}">Brak zadań !!!</p>
+</ng-template>

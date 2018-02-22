@@ -1,13 +1,13 @@
 <table>
   <tr>
-    <app-add-taks (eventTask)="addTask($event)"></app-add-taks>
+    <app-add-taks ></app-add-taks>
   </tr>
   <tr>
-    <td [ngStyle]="{color: getColor()}">Lista zadań
-      <app-task-list [taskList]="taskList" (eventDone)="doneTask($event)" (eventDelete)="deleteTask($event)"></app-task-list>
+    <td >Lista zadań
+      <app-task-list ></app-task-list>
     </td>
     <td >Zadania zrobione
-        <app-task-done [taskDone]="taskDone"></app-task-done>
+        <app-task-done ></app-task-done>
     </td>
   </tr>
 </table>
